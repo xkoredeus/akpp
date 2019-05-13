@@ -5,23 +5,6 @@ $(function() {
       loop: false,
       dots: true,
       navText: ["<img src='img/icon__arrow-prev.svg'>", "<img src='img/icon__arrow-next.svg'>"]
-      // responsive : {
-      //   0   : {
-      //       items: 1
-      //   },
-      //   380 : {
-      //       items: 1
-      //   },
-      //   480 : {
-      //       items: 1
-      //   },
-      //   768 : {
-      //       items: 3
-      //   },
-      //   1040 : {
-      //       items: 4
-      //   }
-      // }
 	});
   $('.brands__slider').owlCarousel({
       nav: true,
@@ -42,6 +25,13 @@ $(function() {
             items: 5
         }
       }
+  });
+  $('.repair__slider').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      items: 1,
+      navText: ["<img src='img/icon__arrow-prev.svg'>", "<img src='img/icon__arrow-next.svg'>"],
   });
 	// tabs 
   $(document).ready(function () {

@@ -49,19 +49,18 @@ select
 input,
 select
 	border: none
-	border-bottom: 1px solid #000
+	border: 1px solid #161616
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder
-	color: #2D2A2B
+	color: #161616
 input:focus,
 textarea:focus,
 input:active,
 textarea:active
 	background: none
-	color: #2D2A2B
-	border-bottom: 1px solid #FFCB05
-	border-color: #39B563
+	color: #161616
+	border: 1px solid #161616
 	outline: none
 .shd,
 button:active
@@ -116,34 +115,60 @@ button:active
 			border-color: transparent
 		&::after
 			background-color: #FFEC3E
-		span
+		span,
+		input[type="submit"]
 			color: #000
+
 	&_white
 		color: #000
 		&::before
 			border-color: #000
 		&::after
 			background-color: #fff
-		// &:hover
-		// 	background: rgb(0,87,255)
-		// 	border-color: rgb(0,87,255)
-.list_circle
-	list-style-type: none
-	padding-left: 0
-	li
-		padding-left: 25px
-		position: relative
-		&
-			margin-bottom: 10px
+	&_black
 		&::before
-			content: ''
-			position: absolute
-			width: 8px
-			height: 8px
-			background-color: #EE414F
-			left: 0
-			top: 8px
-			border-radius: 50%
+			border-color: #000
+	input[type="submit"]
+		padding: 0
+		border: none
+		color: #fff
+		font-family: 'MuseoC700'
+		text-transform: uppercase
+.list
+	&_circle
+		list-style-type: none
+		padding-left: 0
+		li
+			padding-left: 25px
+			position: relative
+			&
+				margin-bottom: 10px
+			&::before
+				content: ''
+				position: absolute
+				width: 8px
+				height: 8px
+				background-color: #EE414F
+				left: 0
+				top: 8px
+				border-radius: 50%
+	&_square
+		list-style-type: none
+		padding-left: 0
+		li
+			padding-left: 35px
+			position: relative
+			&
+				margin-bottom: 10px
+			&::before
+				content: ''
+				position: absolute
+				width: 15px
+				height: 10px
+				background-color: #FFEC3E
+				left: 3px
+				top: 4px
+				transform: skew(-20deg)
 .popup__container
 	padding: 40px
 	background-color: transparent
@@ -177,11 +202,7 @@ button:active
 			bottom: -5%
 			left: -5%
 			z-index: 1
-			background: rgb(255,203,5)
-			background: -moz-linear-gradient(-45deg, rgba(255,203,5,1) 0%, rgba(80,184,72,1) 32%, rgba(0,191,243,1) 70%, rgba(238,51,123,1) 100%)
-			background: -webkit-linear-gradient(-45deg, rgba(255,203,5,1) 0%,rgba(80,184,72,1) 32%,rgba(0,191,243,1) 70%,rgba(238,51,123,1) 100%)
-			background: linear-gradient(135deg, rgba(255,203,5,1) 0%,rgba(80,184,72,1) 32%,rgba(0,191,243,1) 70%,rgba(238,51,123,1) 100%)
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcb05', endColorstr='#ee337b',GradientType=1 )
+			background: #000
 			opacity: .7
 	.popup_call__wrp
 		max-width: 320px
@@ -234,32 +255,33 @@ button:active
 		width: 100%
 		display: flex
 		justify-content: center
+		align-items: center
 		bottom: 40px
 		button.owl-dot
-			width: 15px
-			height: 15px
-			border: 1px solid #333
-			background-color: transparent
+			width: 10px
+			height: 35px
+			border-radius: 50px
+			background-color: #E13E3E
 			position: relative
-			transform: scale(1)
+			transform: scaleY(.7) rotate(14deg)
 			&:not(:last-child)
 				margin-right: 13px
 			&.active
-				transform: scale(0.9)
+				transform: scaleY(1) rotate(20deg)
 				border-color: transparent
-				background-color: #FFCB05
+				background-color: #fff
 	.owl-nav
 		button.owl-prev,
 		button.owl-next
 			position: absolute
 			bottom: 50%
 			margin-bottom: -25.5px
-			border: 1px solid #000
+			background-color: #DD1515
 			padding: 10px !important
+			transform: skew(-20deg)
 		button.owl-prev:hover,
 		button.owl-next:hover
-			background-color: #fff
-			border-color: #fff
+			background-color: #000
 		button.owl-prev.disabled,
 		button.owl-next.disabled,
 		button.owl-prev.disabled:hover,
@@ -270,9 +292,9 @@ button:active
 			cursor: default
 			
 		button.owl-prev
-			left: 0
+			left: 10px
 		button.owl-next
-			right: 0
+			right: 10px
 .und
 	text-decoration: underline
 .upp
@@ -354,8 +376,8 @@ button:active
 						left: -15px
 						background-color: #fff
 	&__bot
-		height: 90px
-		padding: 15px 0
+		height: 80px
+		padding: 15px 0 5px
 		background-color: rgba(0, 0, 0, 0.3)
 	&__nav
 		list-style-type: none
@@ -366,7 +388,17 @@ button:active
 			text-transform: uppercase
 			&:hover
 				color: #FFEC3E
+	&__logo
+		display: flex
+		margin-top: -60px
+		&:hover
+			img
+				transform: scale(.94)
+	.btn
+		margin-left: auto
+		
 .banner
+	overflow: hidden
 	margin-top: -90px
 	position: relative
 	&__slider
@@ -390,6 +422,15 @@ button:active
 				opacity: .4
 			.container
 				position: relative
+		.owl-nav
+			button
+				&.owl-prev
+					left: 50%
+					margin-left: calc(-1140px/2)
+				&.owl-next
+					right: 50%
+					margin-right: calc(-1140px/2)
+
 	.offer
 		&__ttl
 			font-family: 'MuseoC700'
@@ -441,9 +482,6 @@ button:active
 			height: 40px
 		.btn
 			margin: 0 auto -20px
-	.btn
-		&::before
-			border-color: #000
 .brands
 	background-color: #121212
 	padding-bottom: 90px
@@ -550,3 +588,400 @@ button:active
 					color: #000
 		.col-5
 			text-align: right
+.stages
+	color: #fff
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background-color: #0C0C0C
+		opacity: .8
+	.container
+		position: relative
+	&__item
+		display: flex
+		flex-direction: column
+		max-width: 190px
+		margin-left: auto
+		margin-right: auto
+		
+		&-top
+			margin-bottom: 20px
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			position: relative
+			padding: 15px 0
+			&::before
+				content: ''
+				position: absolute
+				width: 3px
+				height: 100%
+				left: 30px
+				top: 0
+				transform: skew(-20deg)
+				background-color: #E13E3E
+			&::after
+				content: ''
+				position: absolute
+				width: 64%
+				height: 100%
+				left: 33px
+				top: 0
+				background-color: #000
+				opacity: .4
+				transform: skew(-20deg)
+				transition: .6s all ease
+		&-num
+			font-family: 'Museo900'
+			font-size: 78px
+			line-height: 0.7
+			position: relative
+			z-index: 1
+		&-img
+			width: 84px
+			height: 84px
+			position: relative
+			z-index: 1
+			margin-top: 40px
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				right: 0
+				bottom: 0
+				width: 100%
+				height: 100%
+				background-position: 50% 50%
+				background-size: contain
+				background-repeat: no-repeat
+			&::before
+				opacity: 1
+			&::after
+				opacity: 0
+		&:hover
+			.stages__item-top
+				&::before
+					background-color: #FFEC3E
+				&::after
+					background-color: #fff
+					opacity: .1
+			.stages__item-img
+				&::before
+					opacity: 0
+				&::after
+					opacity: 1
+		&-ttl
+			font-family: 'Museo700'
+		&-wrp
+			&:nth-child(1)
+				.stages__item-img
+					&::before
+						background-image: url('../img/stages__img_1_1.svg')
+					&::after
+						background-image: url('../img/stages__img_1_2.svg')
+			&:nth-child(2)
+				.stages__item-img
+					&::before
+						background-image: url('../img/stages__img_2_1.svg')
+					&::after
+						background-image: url('../img/stages__img_2_2.svg')
+			&:nth-child(3)
+				.stages__item-img
+					&::before
+						background-image: url('../img/stages__img_3_1.svg')
+					&::after
+						background-image: url('../img/stages__img_3_2.svg')
+			&:nth-child(4)
+				.stages__item-img
+					&::before
+						background-image: url('../img/stages__img_4_1.svg')
+					&::after
+						background-image: url('../img/stages__img_4_2.svg')
+			&:nth-child(5)
+				.stages__item-img
+					&::before
+						background-image: url('../img/stages__img_5_1.svg')
+					&::after
+						background-image: url('../img/stages__img_5_2.svg')
+			&:nth-child(6)
+				.stages__item-img
+					&::before
+						background-image: url('../img/stages__img_6_1.svg')
+					&::after
+						background-image: url('../img/stages__img_6_2.svg')
+.works
+	&__item
+		min-height: 300px
+		margin-bottom: 30px
+		background-position: 50% 50%
+		background-size: cover
+		background-repeat: no-repeat
+		display: flex
+		align-items: flex-end
+		padding: 20px
+		box-shadow: inset 0px -142px 92px -30px rgba(0, 0, 0, 0.89)
+		&:hover
+			box-shadow: inset 0px -152px 112px -60px #E13E3E
+			color: #fff
+.repair
+	background-color: #0C0C0C
+	color: #fff
+	&__promo
+		font-size: 16px
+		font-family: 'Museo700'
+	&__slider
+		&-item
+			width: 100%
+			max-width: 410px
+			height: 350px
+			margin-left: auto
+			margin-right: auto
+			background-position: 50% 50%
+			background-size: cover
+			background-repeat: no-repeat
+.reasons
+	color: #fff
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background-color: #0C0C0C
+		opacity: .8
+	.container
+		position: relative
+	&__item
+		display: flex
+		flex-direction: column
+		&-top
+			margin-bottom: 20px
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			position: relative
+			padding: 15px 0
+			&::before
+				content: ''
+				position: absolute
+				width: 3px
+				height: 100%
+				left: 30px
+				top: 0
+				transform: skew(-20deg)
+				background-color: #E13E3E
+			&::after
+				content: ''
+				position: absolute
+				width: 64%
+				height: 100%
+				left: 33px
+				top: 0
+				background-color: #000
+				opacity: .4
+				transform: skew(-20deg)
+				transition: .6s all ease
+		&-num
+			font-family: 'Museo900'
+			font-size: 78px
+			line-height: 0.7
+			position: relative
+			z-index: 1
+		&-img
+			width: 84px
+			height: 84px
+			position: relative
+			z-index: 1
+			margin-top: 40px
+			margin-right: 70px
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				right: 0
+				bottom: 0
+				width: 100%
+				height: 100%
+				background-position: 50% 50%
+				background-size: contain
+				background-repeat: no-repeat
+			&::before
+				opacity: 1
+			&::after
+				opacity: 0
+		&:hover
+			.reasons__item-top
+				&::before
+					background-color: #FFEC3E
+				&::after
+					background-color: #fff
+					opacity: .1
+			.reasons__item-img
+				&::before
+					opacity: 0
+				&::after
+					opacity: 1
+		&-wrp
+			max-width: 260px
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 20px
+			&:nth-child(1)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_1_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_1_2.svg')
+			&:nth-child(2)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_2_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_2_2.svg')
+			&:nth-child(3)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_3_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_3_2.svg')
+			&:nth-child(4)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_4_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_4_2.svg')
+			&:nth-child(5)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_5_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_5_2.svg')
+			&:nth-child(6)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_6_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_6_2.svg')
+			&:nth-child(7)
+				.reasons__item-img
+					&::before
+						background-image: url('../img/reasons__img_7_1.svg')
+					&::after
+						background-image: url('../img/reasons__img_7_2.svg')
+.checkbox
+	min-width: 200px
+	cursor: pointer
+	position: relative
+	margin-bottom: 0
+	input[type="checkbox"],
+	input[type="radio"]
+		position: absolute
+		z-index: 1
+		opacity: 0
+		width: 100%
+		height: 30px
+		cursor: pointer
+	.checkbox__text
+		font-size: 14px
+		position: relative
+		padding: 2px 0 0 30px
+		cursor: pointer
+		width: 100%
+		height: 30px
+		display: block
+		&::before
+			content: ''
+			position: absolute
+			top: 0px
+			left: -2px
+			width: 21px
+			height: 21px
+			border-radius: 4px
+			border: 1px solid #0C0C0C
+			background: #fff
+		&::after
+			content: ''
+			position: absolute
+			top: 4px
+			left: 2px
+			width: 13px
+			height: 13px
+			background-color: #DD1515
+			opacity: 0
+			transform: scale(0)
+			transition: 0.2s
+			border-radius: 2px
+	input[type="checkbox"]:checked + .checkbox__text:after,
+	input[type="radio"]:checked + .checkbox__text:after
+		opacity: 1
+		transform: scale(1)
+	input[type="checkbox"]:checked + .checkbox__text:before,
+	input[type="radio"]:checked + .checkbox__text:before
+		background-color: #fff
+.feed
+	overflow: hidden
+	&::before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background-color: #fff
+		opacity: .85
+	.container
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			width: 249px
+			height: 400px
+			background: url('../img/feed__img.svg') no-repeat 50% 50% / contain
+	.section__ttl
+		text-align: left
+		font-size: 26px
+	.section__promo
+		text-align: left
+		max-width: unset
+		margin-top: -40px
+		margin-bottom: 20px
+	&-form
+		padding-left: 300px
+		input
+			width: 100%
+.map
+	color: #fff
+	a:not(.btn)
+		color: #fff
+		&:hover
+			opacity: .7
+	.section__ttl
+		font-size: 20px
+		margin-bottom: 15px
+		text-align: left
+	&__tel
+		font-size: 16px
+		font-family: 'Museo700'
+	&__in
+		max-width: 300px
+		padding: 30px
+		background-color: #E13E3E
+		display: flex
+		flex-direction: column
+.footer
+	background-color: #000
+	padding: 30px 0
+	color: #fff
+	&__copy
+		text-align: center
