@@ -50,4 +50,15 @@ $(function() {
   // $(document).on('af_complete', function(event,res) {
   //   if(res.success) parent.$.fancybox.close();
   // });
+  // Анимация на блоке tech
+  var postion = $('.tech').offset().top,
+      height = $('.tech').height();
+  $(document).on('scroll', function (){
+    var scroll = $(document).scrollTop();
+    if(scroll  > postion && scroll < (postion + height + 300) ) {
+       $('.tech__item').addClass('active')
+       }else {
+          // $('.tech__item').removeClass('active')
+       }
+  });
 });
