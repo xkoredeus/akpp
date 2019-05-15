@@ -89,6 +89,12 @@ input[type="tel"]::-webkit-input-placeholder {
   color: #161616;
 }
 
+input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder,
+input[type="tel"]::-moz-placeholder {
+  color: #161616;
+}
+
 input[type="text"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder {
@@ -218,8 +224,12 @@ button:active {
   border-color: #000;
 }
 
-.btn input[type="submit"] {
+.btn_input {
   padding: 0;
+}
+
+.btn_input input[type="submit"] {
+  padding: 15px 30px;
   border: none;
   color: #fff;
   font-family: 'MuseoC700';
@@ -383,6 +393,10 @@ button:active {
   color: #2D2A2B;
 }
 
+.popup__container .popup_call__wrp .popup input.form__input::-moz-placeholder {
+  color: #2D2A2B;
+}
+
 .popup__container .popup_call__wrp .popup input.form__input:-ms-input-placeholder {
   color: #2D2A2B;
 }
@@ -409,7 +423,7 @@ button:active {
 
 .popup__container .popup_call__wrp .popup__policy a {
   font-size: 12px;
-  color: #00BFF3;
+  color: #E13E3E;
 }
 
 .owl-carousel .owl-dots {
