@@ -33,6 +33,28 @@ $(function() {
       items: 1,
       navText: ["<img src='img/icon__arrow-prev.svg'>", "<img src='img/icon__arrow-next.svg'>"],
   });
+  $('.serv-reasons__slider').owlCarousel({
+      nav: true,
+      loop: false,
+      dots: false,
+      margin: 20,
+      navText: ["<img src='img/icon__arrow-prev.svg'>", "<img src='img/icon__arrow-next.svg'>"],
+      responsive : {
+        0   : {
+            items: 1
+        },
+        480 : {
+            items: 2
+        },
+        768 : {
+            items: 3
+        },
+        1040 : {
+            items: 4
+        }
+      }
+  });
+  
 	// tabs 
   $(document).ready(function () {
     $(".tabs-content__item:not(:first-child)").hide();
@@ -50,6 +72,7 @@ $(function() {
   // $(document).on('af_complete', function(event,res) {
   //   if(res.success) parent.$.fancybox.close();
   // });
+  
   // Анимация на блоке tech
   var postion = $('.tech').offset().top,
       height = $('.tech').height();
