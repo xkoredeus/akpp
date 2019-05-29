@@ -89,6 +89,12 @@ input[type="tel"]::-webkit-input-placeholder {
   color: #161616;
 }
 
+input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder,
+input[type="tel"]::-moz-placeholder {
+  color: #161616;
+}
+
 input[type="text"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder {
@@ -387,6 +393,10 @@ button:active {
   color: #2D2A2B;
 }
 
+.popup__container .popup_call__wrp .popup input.form__input::-moz-placeholder {
+  color: #2D2A2B;
+}
+
 .popup__container .popup_call__wrp .popup input.form__input:-ms-input-placeholder {
   color: #2D2A2B;
 }
@@ -644,6 +654,32 @@ button:active {
 
 .header .btn {
   margin-left: auto;
+}
+
+.header_inner .header__bot {
+  background-image: url(../img/banner__bg.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+}
+
+.header_inner .header__bot::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .4;
+}
+
+.header_inner .header__bot .container {
+  position: relative;
 }
 
 .banner {
@@ -1178,8 +1214,8 @@ button:active {
 }
 
 .works__item:hover .works__item-img {
-  -webkit-box-shadow: inset 0px -142px 32px -30px #e13e3ebf;
-          box-shadow: inset 0px -142px 32px -30px #e13e3ebf;
+  -webkit-box-shadow: inset 0px -192px 82px -30px #e13e3ebf;
+          box-shadow: inset 0px -192px 82px -30px #e13e3ebf;
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -2106,4 +2142,305 @@ button:active {
 
 .serv-stages__item-wrp {
   margin-bottom: 30px;
+}
+
+.about-begin {
+  background-color: #EFEFEF;
+}
+
+.about-begin .section__ttl {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.about-begin__descr {
+  font-family: 'Museo500';
+  font-size: 18px;
+}
+
+.about-val__item {
+  max-width: 370px;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: #E13E3E;
+  color: #fff;
+  padding: 20px 25px;
+}
+
+.about-val__item-ttl {
+  font-size: 18px;
+  font-family: 'MuseoC700';
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  min-height: 50px;
+}
+
+.about-val__item-img {
+  width: 90px;
+  height: 65px;
+  background-position: 50% 50%;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+
+.about-val__descr {
+  height: 100%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.about-gal__item {
+  display: block;
+  min-height: 300px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-gal__item-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+}
+
+.about-gal__item:hover .about-gal__item-img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.equip {
+  background-color: #000;
+  color: #fff;
+}
+
+.equip__item {
+  min-height: 300px;
+  margin-bottom: 30px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.equip__item-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s;
+}
+
+.equip__item-info {
+  color: #fff;
+  -webkit-transform: translateY(15px);
+      -ms-transform: translateY(15px);
+          transform: translateY(15px);
+  opacity: 0;
+  position: relative;
+}
+
+.equip__item-ttl {
+  font-family: 'Museo700';
+  text-transform: uppercase;
+}
+
+.equip__item:hover .equip__item-img {
+  -webkit-box-shadow: inset 0px -192px 82px -30px #e13e3ebf;
+          box-shadow: inset 0px -192px 82px -30px #e13e3ebf;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.equip__item:hover .equip__item-info {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.rev {
+  background-color: #F5F5F5;
+}
+
+.rev__item {
+  margin-bottom: 30px;
+  padding-top: 40px;
+  padding-left: 100px;
+  position: relative;
+  -webkit-transition: unset;
+  -o-transition: unset;
+  transition: unset;
+}
+
+.rev__item:hover .rev__img {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.55);
+          box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.55);
+}
+
+.rev__img {
+  width: 150px;
+  height: 150px;
+  -webkit-box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.rev__info {
+  font-family: 'Museo500';
+  padding: 32px;
+  padding-left: 80px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.rev__ttl {
+  font-family: 'MuseoC900';
+  font-size: 26px;
+}
+
+.rev__subttl {
+  font-family: 'MuseoC500';
+  margin-bottom: 20px;
+}
+
+.rev__descr {
+  font-size: 15px;
+}
+
+.contacts-begin {
+  background-color: #EFEFEF;
+  padding-bottom: 300px;
+}
+
+.contacts-begin a {
+  color: #000;
+}
+
+.contacts-begin a:hover {
+  opacity: .5;
+}
+
+.contacts-begin .section__ttl {
+  text-align: left;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
+.contacts-begin .section__promo {
+  font-size: 22px;
+  font-family: 'MuseoC500';
+  text-align: left;
+  margin-left: 0;
+}
+
+.contacts-route {
+  position: relative;
+  z-index: 1;
+}
+
+.contacts-route__map {
+  -webkit-box-shadow: 0px 30px 50px rgba(65, 65, 65, 0.15);
+          box-shadow: 0px 30px 50px rgba(65, 65, 65, 0.15);
+  margin-top: -240px;
+}
+
+.contacts-route__item {
+  display: block;
+  width: 150px;
+  height: 220px;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.contacts-route__item:hover {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.contacts-route__info .section__ttl {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.req {
+  background-color: #F5F5F5;
+}
+
+.req__item {
+  font-family: 'Museo500';
+  font-size: 16px;
+  padding: 52px 35px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.req__item hr {
+  opacity: .5;
+}
+
+.req__img {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -300px;
+  max-width: 100%;
 }

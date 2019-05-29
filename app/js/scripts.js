@@ -84,4 +84,14 @@ $(function() {
           // $('.tech__item').removeClass('active')
        }
   });
+  //отзывы
+  $('.rev__item').slice(3).hide();
+  $('.rev__btn').on('click', function(e){
+    e.preventDefault();
+    $('.rev__item').slice(3).slideToggle();
+    $('html, body').animate({
+        scrollTop: $(window).scrollTop() + 300
+    });
+    $(this).hide();
+  })
 });
