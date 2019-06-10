@@ -57,7 +57,7 @@ $(function() {
   
 	// tabs 
   $(document).ready(function () {
-    $(".tabs-content__item:not(:first-child)").hide();
+    $(".tabs__content-item:not(:first-child)").hide();
     $(".tabs__container div.tabs__content-item.active-tab").show();
     $('ul.tabs__list > li').click(function () {
       if (!($(this).hasClass('active'))) {

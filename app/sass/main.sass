@@ -1358,13 +1358,16 @@ button:active
 					color: #FFEC3E
 			&-wrp
 				margin-bottom: 30px
-.about
+.about,
+.type
 	&-begin
 		background-color: #EFEFEF
 		.section__ttl
+			text-transform: none
 			text-align: left
-			margin-bottom: 20px
+			margin-bottom: 0px
 		&__descr
+			margin-top: 20px
 			font-family: 'Museo500'
 			font-size: 18px
 	&-val
@@ -1540,3 +1543,153 @@ button:active
 		left: 50%
 		margin-left: -300px
 		max-width: 100%
+.stock
+	background-color: #F5F5F5
+	&__item
+		width: 100%
+		display: flex
+		margin-bottom: 30px
+		padding-left: 30px
+		position: relative
+		transition: unset
+		&:hover
+			.stock__img
+				transform: scale(.95)
+				box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.55)
+			.stock__info
+				background-color: #E13E3E
+				&-ttl
+					color: #fff
+				&-descr
+					color: #fff
+	&__img
+		width: 230px
+		height: 180px
+		box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25)
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: cover
+		border-radius: 3px
+		position: absolute
+		left: 0
+		top: 50%
+		margin-top: -90px
+		transition: .5s
+		z-index: 1
+	&__info
+		font-family: 'Museo500'
+		padding: 32px
+		padding-left: 230px
+		background-color: #fff
+		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
+		&-ttl
+			font-family: 'MuseoC900'
+			font-size: 26px
+			margin-bottom: 25px
+			color: #000
+		&-descr
+			font-size: 15px
+			color: #000
+.team
+	background-color: #F5F5F5
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 30px
+		background-color: #fff
+		box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25)
+		border-radius: 6px
+		overflow: hidden
+		
+		&:hover
+			box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.55)
+	&__img
+		width: 50%
+		height: 350px
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		background-size: cover
+		transition: .5s
+		z-index: 1
+	&__info
+		width: 50%
+		height: 100%
+		font-family: 'Museo500'
+		padding: 15px
+		&-ttl
+			font-family: 'MuseoC700'
+			font-size: 26px
+			text-transform: uppercase
+			margin-bottom: 25px
+			color: #000
+		&-descr
+			font-size: 15px
+			color: #000
+.tabs__content-item
+	transition: unset
+.branch
+	background-color: #F5F5F5
+	.tabs
+		&__list
+			list-style-type: none
+			padding-left: 0
+			display: flex
+			margin-bottom: 25px
+			li
+				font-family: 'MuseoC500'
+				font-size: 26px
+				cursor: pointer
+				&:not(:last-child)
+					margin-right: 40px
+					position: relative
+					&::after
+						content: ''
+						position: absolute
+						width: 1px
+						height: 30px
+						background-color: #000
+						right: -20px
+						top: 50%
+						margin-top: -15px
+				&.active
+					font-family: 'MuseoC900'
+					color: #E13E3E
+				&:hover
+					span
+						display: block
+						transform: scale(.95)
+	&__table
+		&-head,
+		&-row
+			font-family: 'Museo700'
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&-row
+			border-radius: 6px
+			background-color: #fff
+			box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25)
+			margin-bottom: 15px
+			.branch__table-item
+				height: 230px
+				&:not(:last-child)
+					border-right: 1px solid #00000047
+		&-item
+			width: 20%
+			padding: 15px
+			display: flex
+			align-items: center
+			&:nth-child(3)
+				width: 30%
+			&-img
+				width: 180px
+				height: 180px
+				display: block
+				background-position: 50% 50%
+				background-repeat: no-repeat
+				background-size: cover
+				border-radius: 6px
+			a
+				color: #000
+				&:hover
+					color: #E13E3E
